@@ -52,10 +52,12 @@ Paste:
 #!/bin/bash
 curl -s https://raw.githubusercontent.com/YOUR-USERNAME/darnell-iptv/main/bay-area.m3u -o /srv/iptv/bay-area.m3u
 ```
+
 ### 2. Make Executable
 ```bash
 sudo chmod +x /usr/local/bin/update-iptv.sh
 ```
+
 ### 3. Schedule Daily Updates
 ```bash
 crontab -e
@@ -63,43 +65,53 @@ crontab -e
 Add this line:
 `0 3 * * * /usr/local/bin.update-iptv.sh`
 
-➕ Adding New Channels
-Format
-m3u
+### 4. Start Cron (WSL)
+```bash
+sudo service cron start
+```
+***
+### ➕ Adding New Channels
+#### Format
+```m3u
 
 #EXTINF:-1 tvg-id="CHANNEL_ID" group-title="GROUP_NAME",Channel Display Name
 https://stream-url-here.m3u8
-Example
-m3u
+```
+#### Example
+```m3u
 
 #EXTINF:-1 tvg-id="KTVU.us" group-title="Bay Area",KTVU FOX 2
 https://example.com/ktvu/stream.m3u8
-Finding Streams
-iptv-org GitHub - Largest open-source collection
-Free-TV GitHub - Curated free streams
-Station websites - Many offer direct HLS streams
-Testing Streams
-bash
+```
+#### Finding Streams
+-[iptv-org GitHub](https://github.com/iptv-org/iptv) - Largest open-source collection
+-[Free-TV GitHub](https://github.com/Free-TV/IPTV) - Curated free streams
+-Station websites - Many offer direct HLS streams
+#### Testing Streams
+```bash
 
 ffprobe -v error https://stream-url.m3u8
+```
 or
 
-bash
+```bash
 
 vlc https://stream-url.m3u8
-🛠️ Troubleshooting
-Stream Not Playing
-Test the URL directly in VLC
-Check if the stream requires geo-restriction bypass
-Verify the stream is still active (streams change frequently)
-Jellyfin Not Updating
-bash
+```
+### 🛠️ Troubleshooting
+#### Stream Not Playing
+1. Test the URL directly in VLC
+2. Check if the stream requires geo-restriction bypass
+3. Verify the stream is still active (streams change frequently)
+#### Jellyfin Not Updating
+```bash
 
 # Manual refresh
 sudo /usr/local/bin/update-iptv.sh
 sudo systemctl restart jellyfin
-Cron Not Running (WSL)
-bash
+```
+#### Cron Not Running (WSL)
+```bash
 
 # Check status
 sudo service cron status
@@ -109,63 +121,76 @@ sudo service cron start
 
 # Auto-start on WSL boot
 echo "sudo service cron start" >> ~/.bashrc
-📋 Channel Status
-Channel	Status	Last Verified
-KQED PBS	✅ Active	2025-01-05
-KRON 4	✅ Active	2025-01-05
-CBS Bay Area	✅ Active	2025-01-05
-NBC Bay Area	✅ Active	2025-01-05
-ABC7 SF	✅ Active	2025-01-05
-Update this table when you verify streams are working
+```
+### 📋 Channel Status
+| Channel	| Status	| Last Verified |
+| KQED PBS	| ✅ Active |	2025-01-05 |
+| KRON 4	| ✅ Active	| 2025-01-05 |
+| CBS Bay Area | ✅ Active |	2025-01-05 |
+| NBC Bay Area	| ✅ Active |	2025-01-05 |
+| ABC7 SF	| ✅ Active	| 2025-01-05 |
+*Update this table when you verify streams are working*
 
-🔐 Legal Notice
+***
+### 🔐 Legal Notice
 All streams in this playlist are:
 
-Publicly available and free to access
-Provided by official broadcasters or authorized distributors
-Legal to view in the United States
+-Publicly available and free to access
+-Provided by official broadcasters or authorized distributors
+-Legal to view in the United States
 This playlist does NOT contain:
 
-Pirated content
-Unauthorized restreams
-Premium cable channels
-🏗️ System Specs
+-Pirated content
+-Unauthorized restreams
+-Premium cable channels
+
+***
+### 🏗️ System Specs
 DARNELL Configuration:
 
-Hardware: HP EliteDesk 800 G4
-OS: Windows 11 + WSL2 (Ubuntu 22.04)
-Media Server: Jellyfin 10.9+
-Location: Martinez, CA (Bay Area)
-📱 Mobile Access
+-Hardware: HP EliteDesk 800 G4
+-OS: Windows 11 + WSL2 (Ubuntu 22.04)
+-Media Server: Jellyfin 10.9+
+-Location: Martinez, CA (Bay Area)
+
+***
+### 📱 Mobile Access
 Edit this playlist from anywhere:
 
-Install GitHub mobile app
-Navigate to bay-area.m3u
-Tap edit (pencil icon)
-Make changes and commit
-DARNELL syncs automatically at 3 AM
-🤝 Contributing
+1. Install GitHub mobile app
+2. Navigate to bay-area.m3u
+3. Tap edit (pencil icon)
+4. Make changes and commit
+5. DARNELL syncs automatically at 3 AM
+
+***
+### 🤝 Contributing
 Found a working Bay Area stream? Submit a pull request!
 
-Guidelines
-Must be free and legal
-Must be stable (not temporary/event streams)
-Must be relevant to Bay Area or national news/PBS
-Include tvg-id and proper group title
-📞 Support
+#### Guidelines
+-Must be free and legal
+-Must be stable (not temporary/event streams)
+-Must be relevant to Bay Area or national news/PBS
+-Include tvg-id and proper group title
+
+***
+### 📞 Support
 Issues with this playlist? Open a GitHub issue or check:
 
-Jellyfin Documentation
-IPTV-Org Community
-📜 License
+-[Jellyfin Documentation](https://jellyfin.org/docs/)
+-[IPTV-Org Community](https://github.com/iptv-org/iptv/discussions)
+
+***
+### 📜 License
 This playlist is provided as-is for personal use. Stream URLs are property of their respective broadcasters.
 
+***
+
 Last Updated: January 5, 2025
-Maintained by: bruh (Martinez, CA)
+Maintained by: Greg (Martinez, CA)
 Built for: DARNELL - Dedicated Autonomous Resource for Natural Exchange and Lifelong Learning
 
-code
-
+```code
 
 ---
 
@@ -187,5 +212,3 @@ code
 4. **Star your own repo** so it's easy to find later
 
 ---
-
-Want me to also create a **CHANGELOG.md** file to track when you add/remove channels? Tha
