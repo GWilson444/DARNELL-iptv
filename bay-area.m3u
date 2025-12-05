@@ -1,0 +1,36 @@
+#EXTM3U
+# KQED PBS (Bay Area)
+#EXTINF:-1 tvg-id="KQED.us" group-title="Bay Area",KQED PBS (Bay Area)
+https://dai.google.com/linear/hls/event/VkDvDkRHRBGxvVkZ9KJ1AQ/master.m3u8
+
+# KRON 4 News (Bay Area)
+#EXTINF:-1 tvg-id="KRON4.us" group-title="Bay Area",KRON 4 News (Bay Area)
+https://live.field59.com/kron/ngrp:kron_stream_all/master.m3u8
+
+# CBS News Bay Area
+#EXTINF:-1 tvg-id="KPIX.us" group-title="Bay Area",CBS News Bay Area
+https://dai.google.com/linear/hls/event/NCEpOX_RRwCHHhp06HW8VQ/master.m3u8
+
+# NBC Bay Area
+#EXTINF:-1 tvg-id="KNTV.us" group-title="Bay Area",NBC Bay Area
+https://lnc-news12us.tubi.video/playlist.m3u8
+
+# ABC7 San Francisco
+#EXTINF:-1 tvg-id="KGO.us" group-title="Bay Area",ABC7 San Francisco
+https://content-ausw2.uplynk.com/channel/f6a15343fdbb417babe1bdeb44c735f0.m3u8
+
+# PBS National Feed
+#EXTINF:-1 tvg-id="PBS.us" group-title="National",PBS National
+https://dai.google.com/linear/hls/event/DFhZoTxoS8G4S0e8Zyx6kg/master.m3u8
+
+# ABC News Live
+#EXTINF:-1 tvg-id="ABCNewsLive.us" group-title="National",ABC News Live
+https://abcnews1.akamaized.net/hls/live/2028720/abcnews/master.m3u8
+
+# NBC News Now
+#EXTINF:-1 tvg-id="NBCNewsNow.us" group-title="National",NBC News Now
+https://nbcnews2.akamaized.net/hls/live/723429-b/NBCNewsNow/master.m3u8
+
+# CBS News National
+#EXTINF:-1 tvg-id="CBSNews.us" group-title="National",CBS News National
+https://cbsn-nyc.akamaized.net/hls/live/2023613/cbsnstream/master.m3u8
